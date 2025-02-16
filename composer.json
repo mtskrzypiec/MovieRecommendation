@@ -1,0 +1,19 @@
+{
+    "name": "mateusz/project",
+    "autoload": {
+        "psr-4": {
+            "MovieRecommendation\\": "src/MovieRecommendation",
+            "Tests\\": "tests"
+        }
+    },
+    "authors": [
+        {
+            "name": "mtskrzypiec",
+            "email": "141160640+mtskrzypiec@users.noreply.github.com"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "^12.0",
+        "phpstan/phpstan": "^2.1"
+    }
+}
