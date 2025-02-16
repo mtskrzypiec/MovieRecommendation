@@ -10,6 +10,6 @@ trait ImportMoviesTrait
 
     public static function setUpBeforeClass(): void
     {
-        self::$movies = require_once __DIR__ . "/../data/movies.php";
+        self::$movies = require __DIR__ . "/../data/movies.php";
     }
 }
