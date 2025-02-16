@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace src\MovieRecomandation;
+namespace MovieRecommendation;
 
-use src\MovieRecomandation\Enum\MovieRecommendationType;
-use src\MovieRecomandation\Strategy\RecommendationStrategyInterface;
+use MovieRecommendation\Enum\MovieRecommendationType;
+use MovieRecommendation\Strategy\RecommendationStrategyInterface;
 
 readonly class MovieRecommender
 {
