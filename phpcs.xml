@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ruleset name="Coding standard">
+    <description>Coding standard</description>
+
+    <file>tests</file>
+
+    <arg name="basepath" value="." />
+    <arg value="p" />
+    <arg name="colors" />
+    <arg name="extensions" value="php,dist" />
+
+    <rule ref="PSR12" />
+</ruleset>

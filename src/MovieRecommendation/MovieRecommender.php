@@ -14,13 +14,11 @@ readonly class MovieRecommender
          * @var RecommendationStrategyInterface[]
          */
         private array $strategies,
-
         /**
          * @var string[]
          */
         private array $movies,
-    )
-    {
+    ) {
     }
 
     public function getRecommendations(MovieRecommendationType $type): array
