@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Tests;
 
 use PHPUnit\Framework\TestCase;
-use src\MovieRecomandation\Strategy\MultiWordStrategy;
+use MovieRecommendation\Strategy\MultiWordStrategy;
 use Tests\Traits\ImportMoviesTrait;
 
 class MultiWordStrategyTest extends TestCase

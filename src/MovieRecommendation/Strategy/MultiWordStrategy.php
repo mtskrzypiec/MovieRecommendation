@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace src\MovieRecomandation\Strategy;
+namespace MovieRecommendation\Strategy;
 
 class MultiWordStrategy implements RecommendationStrategyInterface
 {

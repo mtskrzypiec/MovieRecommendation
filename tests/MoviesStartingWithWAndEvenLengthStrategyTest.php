@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Tests;
 
 use PHPUnit\Framework\TestCase;
-use src\MovieRecomandation\Strategy\MoviesStartingWithWAndEvenLengthStrategy;
+use MovieRecommendation\Strategy\MoviesStartingWithWAndEvenLengthStrategy;
 use Tests\Traits\ImportMoviesTrait;
 
 class MoviesStartingWithWAndEvenLengthStrategyTest extends TestCase

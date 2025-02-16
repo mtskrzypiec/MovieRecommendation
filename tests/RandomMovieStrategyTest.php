@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Tests;
 
 use PHPUnit\Framework\TestCase;
-use src\MovieRecomandation\Strategy\RandomStrategy;
+use MovieRecommendation\Strategy\RandomStrategy;
 use Tests\Traits\ImportMoviesTrait;
 
 class RandomMovieStrategyTest extends TestCase
