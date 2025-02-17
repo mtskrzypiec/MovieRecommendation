@@ -1,11 +1,15 @@
 {
-    "name": "mateusz/project",
+    "name": "mateusz/movies",
     "description": "A movie recommendation lib created for the recruitment process at morele.net.",
     "type": "project",
     "license": ["MIT"],
     "autoload": {
         "psr-4": {
-            "MovieRecommendation\\": "src/MovieRecommendation",
+            "MovieRecommendation\\": "src/MovieRecommendation"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
             "Tests\\": "tests"
         }
     },
