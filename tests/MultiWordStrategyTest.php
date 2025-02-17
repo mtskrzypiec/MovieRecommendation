@@ -18,7 +18,7 @@ class MultiWordStrategyTest extends TestCase
         $SUT = new MultiWordStrategy();
 
         //act
-        $filteredMovies = $SUT->getRecommendations(self::$movies);
+        $filteredMovies = $SUT->getRecommendations($this->movies);
 
         //assert
         foreach ($filteredMovies as $movie) {

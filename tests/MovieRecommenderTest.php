@@ -28,7 +28,7 @@ class MovieRecommenderTest extends TestCase
                 MovieRecommendationType::W_EVEN->value => new MoviesStartingWithWAndEvenLengthStrategy(),
                 MovieRecommendationType::MULTI_WORD->value => new MultiWordStrategy(),
             ],
-            self::$movies,
+            $this->movies,
         );
     }
 
@@ -75,7 +75,7 @@ class MovieRecommenderTest extends TestCase
                 MovieRecommendationType::W_EVEN->value => new MoviesStartingWithWAndEvenLengthStrategy(),
                 MovieRecommendationType::MULTI_WORD->value => new MultiWordStrategy(),
             ],
-            self::$movies,
+            $this->movies,
         );
 
         //act

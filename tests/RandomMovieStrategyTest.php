@@ -18,7 +18,7 @@ class RandomMovieStrategyTest extends TestCase
         $SUT = new RandomStrategy();
 
         //act
-        $filteredMovies = $SUT->getRecommendations(self::$movies);
+        $filteredMovies = $SUT->getRecommendations($this->movies);
 
         //assert
         $this->assertCount(3, $filteredMovies);
@@ -30,8 +30,8 @@ class RandomMovieStrategyTest extends TestCase
         $SUT = new RandomStrategy();
 
         //act
-        $firstResult = $SUT->getRecommendations(self::$movies);
-        $secondResult = $SUT->getRecommendations(self::$movies);
+        $firstResult = $SUT->getRecommendations($this->movies);
+        $secondResult = $SUT->getRecommendations($this->movies);
 
         //assert
         $this->assertNotSame($firstResult, $secondResult);

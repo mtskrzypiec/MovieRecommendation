@@ -6,7 +6,7 @@ namespace Tests\Traits;
 
 trait ImportMoviesTrait
 {
-    public static array $movies = [
+    public array $movies = [
         "Pulp Fiction",
         "Incepcja",
         "Skazani na Shawshank",
