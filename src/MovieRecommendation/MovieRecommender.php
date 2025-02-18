@@ -8,18 +8,20 @@ use MovieRecommendation\Enum\MovieRecommendationType;
 use MovieRecommendation\Exceptions\StrategyWasNotRegistered;
 use MovieRecommendation\Strategy\RecommendationStrategyInterface;
 
-readonly class MovieRecommender
+class MovieRecommender
 {
-    public function __construct(
-        /**
-         * @var RecommendationStrategyInterface[]
-         */
-        private array $strategies,
-        /**
-         * @var string[]
-         */
-        private array $movies,
-    ) {
+    /** @var array<string, RecommendationStrategyInterface> */
+    private array $strategies = [];
+
+    /**
+     * @param iterable<RecommendationStrategyInterface> $strategies
+     * @param string[] $movies
+     */
+    public function __construct(iterable $strategies, private array $movies)
+    {
+        foreach ($strategies as $strategy) {
+            $this->strategies[$strategy->getType()->value] = $strategy;
+        }
     }
 
     /**
