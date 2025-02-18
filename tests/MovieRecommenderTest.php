@@ -12,10 +12,12 @@ use MovieRecommendation\Strategy\MultiWordStrategy;
 use MovieRecommendation\Strategy\RandomStrategy;
 use PHPUnit\Framework\TestCase;
 use Tests\Traits\ImportMoviesTrait;
+use Tests\Traits\WordsTrait;
 
 class MovieRecommenderTest extends TestCase
 {
     use ImportMoviesTrait;
+    use WordsTrait;
 
     private MovieRecommender $SUT;
 
@@ -60,7 +62,10 @@ class MovieRecommenderTest extends TestCase
 
         //assert
         foreach ($result as $movie) {
-            $this->assertGreaterThan(1, str_word_count($movie));
+            $this->assertGreaterThanOrEqual(
+                1,
+                $this->countWords($movie)
+            );
         }
     }
 

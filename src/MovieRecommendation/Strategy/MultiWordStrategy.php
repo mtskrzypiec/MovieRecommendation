@@ -11,12 +11,20 @@ class MultiWordStrategy implements RecommendationStrategyInterface
     public function getRecommendations(array $movies): array
     {
         return array_values(array_filter($movies, function ($movie) {
-            return str_word_count($movie) > 1;
+            return $this->countWords($movie) > 1;
         }));
     }
 
     public function getType(): MovieRecommendationType
     {
         return MovieRecommendationType::MULTI_WORD;
+    }
+
+    private function countWords(string $movie): int
+    {
+        $movie = preg_replace('/[^\p{L}\p{N}\s]/u', '', $movie);
+        $words = preg_split('/\s+/', trim($movie));
+
+        return count($words);
     }
 }

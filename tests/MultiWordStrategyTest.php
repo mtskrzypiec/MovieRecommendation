@@ -7,10 +7,12 @@ namespace Tests;
 use PHPUnit\Framework\TestCase;
 use MovieRecommendation\Strategy\MultiWordStrategy;
 use Tests\Traits\ImportMoviesTrait;
+use Tests\Traits\WordsTrait;
 
 class MultiWordStrategyTest extends TestCase
 {
     use ImportMoviesTrait;
+    use WordsTrait;
 
     public function testReturnsOnlyMoviesWithMultipleWords(): void
     {
@@ -22,7 +24,7 @@ class MultiWordStrategyTest extends TestCase
 
         //assert
         foreach ($filteredMovies as $movie) {
-            $this->assertGreaterThan(1, str_word_count($movie));
+            $this->assertGreaterThanOrEqual(2, $this->countWords($movie));
         }
     }
 
