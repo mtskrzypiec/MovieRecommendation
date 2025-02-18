@@ -2,13 +2,13 @@
 
 ## Description
 
-`MovieRecommender` is the main entry point for the movie recommendation library. It allows the use of different movie recommendation strategies that can be registered in the system.
+`MovieRecommender` is the main entry point for the movie recommendation service. It allows the use of different movie recommendation strategies that can be registered in the system.
 
-The library works by utilizing the `RecommendationStrategyInterface`, which defines the method for generating recommendations. Each strategy implements its own algorithm for selecting movies, and the user can obtain recommendations based on a defined type.
+The service works by utilizing the `RecommendationStrategyInterface`, which defines the method for generating recommendations. Each strategy implements its own algorithm for selecting movies, and the user can obtain recommendations based on a defined type.
 
 ## Installation
 
-The library requires **PHP 8.3+** and support for namespaces and enums.
+The project requires **PHP 8.3+** and support for namespaces and enums.
 
 In the `require` section of the `composer.json` file, add:
 
@@ -84,7 +84,7 @@ try {
 
 ## Supported Recommendation Strategies
 
-The library supports different types of movie recommendations, defined in `MovieRecommendationType`:
+The service supports different types of movie recommendations, defined in `MovieRecommendationType`:
 
 - **`RANDOM`** - Returns 3 random titles.
 - **`W_EVEN`** - Returns all movies starting with the letter 'W' but only if their title has an even number of characters.
