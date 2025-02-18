@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Tests;
 
 use MovieRecommendation\Enum\MovieRecommendationType;
-use MovieRecommendation\Exceptions\StrategyWasNotRegistered;
+use MovieRecommendation\Exception\StrategyWasNotRegistered;
 use MovieRecommendation\MovieRecommender;
 use MovieRecommendation\Strategy\MoviesStartingWithWAndEvenLengthStrategy;
 use MovieRecommendation\Strategy\MultiWordStrategy;
@@ -40,7 +40,11 @@ class MovieRecommenderTest extends TestCase
         $result = $this->SUT->getRecommendations(MovieRecommendationType::RANDOM);
 
         //assert
-        $this->assertCount(3, $result);
+        $this->assertCount(
+            RandomStrategy::FILTERED_MOVIES_COUNT,
+            $result,
+            "Expected 3 movies from the RandomStrategy, but got " . count($result) . " movies."
+        );
     }
 
     public function testReturnsMoviesFromWEvenStrategy(): void
@@ -50,8 +54,16 @@ class MovieRecommenderTest extends TestCase
 
         //assert
         foreach ($result as $movie) {
-            $this->assertStringStartsWith('W', $movie);
-            $this->assertEquals(0, strlen($movie) % 2);
+            $this->assertStringStartsWith(
+                'W',
+                $movie,
+                "Movie '$movie' does not start with 'W'."
+            );
+            $this->assertEquals(
+                0,
+                strlen($movie) % 2,
+                "Movie '$movie' does not have an even length."
+            );
         }
     }
 
@@ -64,7 +76,8 @@ class MovieRecommenderTest extends TestCase
         foreach ($result as $movie) {
             $this->assertGreaterThanOrEqual(
                 2,
-                $this->countWords($movie)
+                $this->countWords($movie),
+                "Movie '$movie' does not have the required number of words"
             );
         }
     }

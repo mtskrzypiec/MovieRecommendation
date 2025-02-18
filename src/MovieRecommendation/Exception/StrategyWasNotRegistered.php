@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace MovieRecommendation\Exceptions;
+namespace MovieRecommendation\Exception;
 
 class StrategyWasNotRegistered extends \Exception
 {

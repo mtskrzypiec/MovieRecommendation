@@ -22,8 +22,16 @@ class MoviesStartingWithWAndEvenLengthStrategyTest extends TestCase
 
         //assert
         foreach ($filteredMovies as $movie) {
-            $this->assertStringStartsWith("W", $movie);
-            $this->assertEquals(0, strlen($movie) % 2);
+            $this->assertStringStartsWith(
+                "W",
+                $movie,
+                "Movie '$movie' does not start with 'W'."
+            );
+            $this->assertEquals(
+                0,
+                strlen($movie) % 2,
+                "Movie '$movie' does not have an even length."
+            );
         }
     }
 
@@ -37,6 +45,9 @@ class MoviesStartingWithWAndEvenLengthStrategyTest extends TestCase
         $filteredMovies = $SUT->getRecommendations($movies);
 
         //assert
-        $this->assertEmpty($filteredMovies);
+        $this->assertEmpty(
+            $filteredMovies,
+            "The filtered movies array is not empty when no movies match the criteria."
+        );
     }
 }

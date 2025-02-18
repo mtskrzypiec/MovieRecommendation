@@ -8,7 +8,7 @@ use MovieRecommendation\Enum\MovieRecommendationType;
 
 class RandomStrategy implements RecommendationStrategyInterface
 {
-    private const int FILTERED_MOVIES_COUNT = 3;
+    public const int FILTERED_MOVIES_COUNT = 3;
 
     public function getRecommendations(array $movies): array
     {

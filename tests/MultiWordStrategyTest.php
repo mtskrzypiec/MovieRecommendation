@@ -24,7 +24,11 @@ class MultiWordStrategyTest extends TestCase
 
         //assert
         foreach ($filteredMovies as $movie) {
-            $this->assertGreaterThanOrEqual(2, $this->countWords($movie));
+            $this->assertGreaterThanOrEqual(
+                2,
+                $this->countWords($movie),
+                "Movie '$movie' does not have the required number of words"
+            );
         }
     }
 
@@ -34,9 +38,12 @@ class MultiWordStrategyTest extends TestCase
         $SUT = new MultiWordStrategy();
 
         //act
-        $filteredMovies = $SUT->getRecommendations([]);
+        $filteredMovies = $SUT->getRecommendations(["Incepcja", "Django", "Nędznicy"]);
 
         //assert
-        $this->assertEmpty($filteredMovies);
+        $this->assertEmpty(
+            $filteredMovies,
+            "Expected an empty array, but got movies: " . implode(', ', $filteredMovies)
+        );
     }
 }

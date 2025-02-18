@@ -21,7 +21,11 @@ class RandomMovieStrategyTest extends TestCase
         $filteredMovies = $SUT->getRecommendations($this->movies);
 
         //assert
-        $this->assertCount(3, $filteredMovies);
+        $this->assertCount(
+            RandomStrategy::FILTERED_MOVIES_COUNT,
+            $filteredMovies,
+            "Expected 3 movies to be returned, but got " . count($filteredMovies) . " movies."
+        );
     }
 
     public function testReturnsDifferentResultsOnMultipleCalls(): void
@@ -34,6 +38,10 @@ class RandomMovieStrategyTest extends TestCase
         $secondResult = $SUT->getRecommendations($this->movies);
 
         //assert
-        $this->assertNotSame($firstResult, $secondResult);
+        $this->assertNotSame(
+            $firstResult,
+            $secondResult,
+            "The results are the same on multiple calls, but they should be different."
+        );
     }
 }

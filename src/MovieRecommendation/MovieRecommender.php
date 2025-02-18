@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace MovieRecommendation;
 
 use MovieRecommendation\Enum\MovieRecommendationType;
-use MovieRecommendation\Exceptions\StrategyWasNotRegistered;
+use MovieRecommendation\Exception\StrategyWasNotRegistered;
 use MovieRecommendation\Strategy\RecommendationStrategyInterface;
 
 class MovieRecommender
