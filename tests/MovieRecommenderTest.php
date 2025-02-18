@@ -63,7 +63,7 @@ class MovieRecommenderTest extends TestCase
         //assert
         foreach ($result as $movie) {
             $this->assertGreaterThanOrEqual(
-                1,
+                2,
                 $this->countWords($movie)
             );
         }
